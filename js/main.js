@@ -54,7 +54,8 @@ function easeInOutCubic(x) {
 }
 
 const isTouch = !window.matchMedia('(pointer:fine)').matches;
-if (!isTouch) {
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!isTouch && !prefersReducedMotion) {
   const cursor = document.querySelector('.custom-cursor');
   if (cursor) {
     cursor.classList.add('cursor-hide');
@@ -209,7 +210,7 @@ document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 /* ═══════════════════════════════════════
    PARALLAX ORBS (desktop)
 ═══════════════════════════════════════ */
-if (!isTouch) {
+if (!isTouch && !prefersReducedMotion) {
   const orb1 = document.querySelector('.orb-1');
   const orb2 = document.querySelector('.orb-2');
   if (orb1 && orb2) {
@@ -233,7 +234,7 @@ function isDarkMode() {
   return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
-if (!isTouch) {
+if (!isTouch && !prefersReducedMotion) {
   document.querySelectorAll('.glass').forEach(card => {
     card.addEventListener('mousemove', e => {
       const r = card.getBoundingClientRect();
@@ -286,6 +287,22 @@ if (progressBar) {
     progressBar.style.width = (scrolled / total * 100) + '%';
   }, { passive: true });
 }
+
+/* ═══════════════════════════════════════
+   SKILLS EXPAND / COLLAPSE
+═══════════════════════════════════════ */
+(function () {
+  const toggle = document.getElementById('skillsToggle');
+  const block  = document.querySelector('.skills-block');
+  if (!toggle || !block) return;
+  block.classList.add('collapsed');
+  toggle.setAttribute('aria-expanded', 'false');
+  toggle.addEventListener('click', function () {
+    const isCollapsed = block.classList.toggle('collapsed');
+    toggle.textContent = isCollapsed ? '+16 more skills' : 'Show fewer skills';
+    toggle.setAttribute('aria-expanded', String(!isCollapsed));
+  });
+})();
 
 /* ═══════════════════════════════════════
    STICKY SCROLL SHOWCASE (#projects)
