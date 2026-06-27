@@ -1914,3 +1914,106 @@ html.js-ready .fi.in { opacity: 1; transform: none; }
   transition: color var(--transition-fast), gap var(--transition);
 }
 .post-nav-link:hover { color: var(--text); gap: 10px; }
+
+/* ── Post meta row (category + date + read time) ── */
+.post-meta-row {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 10px 14px; margin-bottom: 24px;
+}
+.post-meta-row .post-cat { margin-bottom: 0; }
+
+.post-read-time {
+  font: 400 13px/1 var(--font-family);
+  color: var(--text3);
+}
+.post-meta-divider {
+  width: 3px; height: 3px; border-radius: 50%;
+  background: var(--text3); flex-shrink: 0;
+}
+
+/* ── Post excerpt (lead text under title) ── */
+.post-excerpt {
+  font: 400 20px/1.55 var(--font-family);
+  color: var(--text2); letter-spacing: -0.4px;
+  margin: 0 0 32px; max-width: 600px; margin-left: auto; margin-right: auto;
+}
+
+/* ── Post byline (author row under excerpt) ── */
+.post-byline {
+  display: inline-flex; align-items: center; gap: 12px;
+  border-top: 1px solid var(--border); padding-top: 24px;
+  width: 100%; justify-content: center;
+}
+.post-byline-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  object-fit: cover; flex-shrink: 0;
+  border: 1.5px solid var(--border);
+}
+.post-byline-info {
+  display: flex; flex-direction: column; gap: 2px; text-align: left;
+}
+.post-byline-name {
+  font: 600 15px/1.2 var(--font-family); color: var(--text);
+}
+.post-byline-role {
+  font: 400 13px/1.2 var(--font-family); color: var(--text3);
+}
+
+/* ── Post body additions ── */
+.post-body h4 {
+  font-family: var(--font-display);
+  font-size: 18px; font-weight: 600;
+  color: var(--text); margin: 32px 0 10px;
+  letter-spacing: -0.5px; line-height: 1.4;
+}
+.post-body img {
+  width: 100%; border-radius: 16px; display: block;
+  margin: 40px 0;
+}
+.post-body hr {
+  border: none; border-top: 1px solid var(--border); margin: 48px 0;
+}
+.post-body table {
+  width: 100%; border-collapse: collapse; font-size: 15px;
+  margin: 32px 0;
+}
+.post-body th {
+  text-align: left; font-weight: 600; color: var(--text);
+  border-bottom: 2px solid var(--border); padding: 8px 12px;
+}
+.post-body td {
+  color: var(--text2); border-bottom: 1px solid var(--border);
+  padding: 10px 12px; vertical-align: top;
+}
+
+/* ── Author bio card ── */
+.post-author-bio {
+  max-width: 680px; margin: 0 auto;
+  padding: 32px 20px 0;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 20px;
+}
+@media (min-width: 640px) { .post-author-bio { padding: 40px 28px 0; } }
+@media (min-width: 960px) { .post-author-bio { padding: 40px 0 0; } }
+
+.post-author-bio-avatar {
+  width: 64px; height: 64px; border-radius: 50%;
+  object-fit: cover; flex-shrink: 0;
+  border: 2px solid var(--border);
+}
+.post-author-bio-content { display: flex; flex-direction: column; gap: 6px; }
+.post-author-bio-name {
+  font: 700 17px/1.2 var(--font-display); color: var(--text);
+}
+.post-author-bio-text {
+  font: 400 15px/1.65 var(--font-family); color: var(--text2);
+  margin: 0;
+}
+.post-author-bio-links {
+  display: flex; gap: 16px; margin-top: 4px;
+}
+.post-author-bio-links a {
+  font: 500 13px/1 var(--font-family); color: var(--accent);
+  text-decoration: none; transition: opacity var(--transition-fast);
+}
+.post-author-bio-links a:hover { opacity: 0.75; }
