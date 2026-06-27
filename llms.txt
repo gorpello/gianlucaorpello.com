@@ -1,0 +1,26 @@
+# Gianluca Orpello
+
+> Senior iOS Engineer and Apple Certified Trainer based in Naples, Italy.
+
+Gianluca Orpello is a Senior iOS Engineer, Apple Certified Trainer, and startup co-founder with six years of experience building Swift and SwiftUI applications across the Apple platform. He co-founded Tilted Penguins, where he built morganize.it from first commit to acquisition. He is currently Co-Founder and Tech Lead at Unicorn Donkeys, building Defenso.it — a LegalTech platform for workflow automation.
+
+## Core expertise
+
+- Swift and SwiftUI (8+ years, production)
+- The Composable Architecture (TCA), MVVM, Swift Concurrency
+- Full Apple ecosystem: iOS, iPadOS, macOS, watchOS, tvOS, visionOS
+- Backend: Node.js, Express, MongoDB, Docker, GitHub Actions
+- Apple Certified Trainer (LearnQuest / Apple): Swift, SwiftUI, iOS SDK
+- Startup building: co-founder, team leadership, exit
+
+## Pages
+
+- [Portfolio](https://gianlucaorpello.com/): Full career history, skills, certifications, and contact
+- [Blog](https://gianlucaorpello.com/blog/): Technical writing on Swift, SwiftUI, TCA, startups
+- [SwiftUI + TCA: Lessons from Production](https://gianlucaorpello.com/blog/tca-architecture.html): In-depth article on building with The Composable Architecture
+
+## Contact
+
+- Email: g.orpello@gmail.com
+- LinkedIn: https://www.linkedin.com/in/gianlucaorpello/
+- GitHub: https://github.com/gorpello

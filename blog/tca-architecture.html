@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://gianlucaorpello.com/og-image.jpg">
+<meta name="twitter:image" content="https://gianlucaorpello.com/og-image.jpg">
+<title>SwiftUI + TCA: Lessons from Production — Gianluca Orpello</title>
+<meta name="description" content="After a year building Defenso.it with The Composable Architecture, here's what I'd tell myself on day one — the good, the tricky, and what finally clicked.">
+<link rel="canonical" href="https://gianlucaorpello.com/blog/tca-architecture.html">
+<meta property="og:title" content="SwiftUI + TCA: Lessons from Production — Gianluca Orpello">
+<meta property="og:description" content="After a year building Defenso.it with The Composable Architecture, here's what I'd tell myself on day one — the good, the tricky, and what finally clicked.">
+<meta property="og:url" content="https://gianlucaorpello.com/blog/tca-architecture.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-06-18">
+<meta property="article:author" content="Gianluca Orpello">
+<meta property="article:tag" content="Swift">
+<meta property="article:tag" content="SwiftUI">
+<meta property="article:tag" content="TCA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SwiftUI + TCA: Lessons from Production">
+<meta name="twitter:description" content="After a year building Defenso.it with The Composable Architecture, here's what I'd tell myself on day one.">
+<script>
+  (function(){
+    document.documentElement.classList.add('js-ready');
+    var t = localStorage.getItem('theme');
+    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="stylesheet" href="../css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://gianlucaorpello.com/blog/tca-architecture.html#article",
+      "url": "https://gianlucaorpello.com/blog/tca-architecture.html",
+      "headline": "SwiftUI + The Composable Architecture: Lessons from Production",
+      "description": "After a year building Defenso.it with The Composable Architecture, here's what I'd tell myself on day one — the good, the tricky, and what finally clicked.",
+      "datePublished": "2025-06-18",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "@id": "https://gianlucaorpello.com/#person",
+        "name": "Gianluca Orpello"
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": "https://gianlucaorpello.com/#person",
+        "name": "Gianluca Orpello"
+      },
+      "isPartOf": { "@id": "https://gianlucaorpello.com/blog/#blog" },
+      "about": ["Swift", "SwiftUI", "The Composable Architecture", "iOS Development", "Software Architecture"],
+      "proficiencyLevel": "Expert",
+      "timeRequired": "PT8M"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gianlucaorpello.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://gianlucaorpello.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "SwiftUI + TCA: Lessons from Production", "item": "https://gianlucaorpello.com/blog/tca-architecture.html" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="custom-cursor"></div>
+<div class="reading-progress"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="../" class="nav-logo cursor-hover">Gianluca Orpello</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../#about" class="cursor-hover">About</a>
+      <a href="../#experience" class="cursor-hover">Experience</a>
+      <a href="../#certifications" class="cursor-hover">Certifications</a>
+      <a href="./" class="cursor-hover nav-active">Blog</a>
+      <a href="../#contact" class="cursor-hover">Contact</a>
+    </div>
+    <button class="theme-toggle cursor-hover" id="themeToggle" aria-label="Toggle theme"></button>
+    <button class="burger cursor-hover" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-overlay" id="mob">
+  <a href="../#about" class="mob-link cursor-hover">About<span>→</span></a>
+  <a href="../#experience" class="mob-link cursor-hover">Experience<span>→</span></a>
+  <a href="../#certifications" class="mob-link cursor-hover">Certifications<span>→</span></a>
+  <a href="./" class="mob-link cursor-hover">Blog<span>→</span></a>
+  <a href="../#contact" class="mob-link cursor-hover">Contact<span>→</span></a>
+</div>
+
+<!-- POST HEADER -->
+<header class="post-header">
+  <span class="post-cat">Swift</span>
+  <h1 class="post-title">SwiftUI + The Composable Architecture: Lessons from Production</h1>
+  <p class="post-date"><time datetime="2025-06-18">June 18, 2025</time> · 8 min read</p>
+</header>
+
+<!-- HERO -->
+<div class="post-hero">
+  <div class="post-hero-gradient" style="background:linear-gradient(135deg,#0077ff 0%,#0050b8 100%);"></div>
+</div>
+
+<!-- POST BODY -->
+<article class="post-body">
+
+  <p>A year ago, I started building Defenso.it — a LegalTech platform for automating complex legal workflows — using SwiftUI and <a href="https://github.com/pointfreeco/swift-composable-architecture" target="_blank" rel="noopener">The Composable Architecture (TCA)</a>. We'd just left the Apple Developer Academy, we had strong opinions about state management, and TCA seemed like the principled choice.</p>
+
+  <p>It was. But not in the ways I expected. Here's an honest debrief: the patterns that made everything click, the friction we hit in production, and what I'd tell myself on day one.</p>
+
+  <h2>Why TCA in the first place</h2>
+
+  <p>When your domain has the complexity of legal workflows — branching case states, multi-party consent chains, document versioning — you need state management that makes impossible states unrepresentable. SwiftUI's <code>@State</code> and <code>ObservableObject</code> scale fine for simple screens, but they don't give you the structure to reason about side effects at feature boundaries.</p>
+
+  <p>TCA forces you to think in terms of <strong>State</strong>, <strong>Action</strong>, and <strong>Reducer</strong> — a strict unidirectional data flow where every change to your app's state is an explicit, testable transformation. This isn't philosophy for its own sake. When a bug surfaces at 2am, having every state transition logged and replayable is worth its weight in gold.</p>
+
+  <div class="callout">
+    <p><strong>The core promise of TCA:</strong> every feature is a pure function <code>(State, Action) → (State, Effect)</code>. Your business logic becomes deterministic, fully testable, and composable with other features via <code>Scope</code> and <code>ifLet</code>.</p>
+  </div>
+
+  <h2>What clicked immediately</h2>
+
+  <h3>Composing features</h3>
+
+  <p>TCA's feature composition is genuinely elegant. When you model a complex screen as a parent reducer that owns child reducers via <code>Scope</code>, the relationship between features becomes explicit at the type level. Our document review flow owns a <code>DocumentViewerFeature</code>, a <code>SignatureFeature</code>, and an <code>AuditLogFeature</code> — and their interactions are mediated entirely through parent <code>Action</code> cases.</p>
+
+  <pre><code>struct ReviewFeature: Reducer {
+  struct State: Equatable {
+    var document: DocumentViewerFeature.State
+    var signature: SignatureFeature.State
+    var auditLog: AuditLogFeature.State
+  }
+
+  enum Action {
+    case document(DocumentViewerFeature.Action)
+    case signature(SignatureFeature.Action)
+    case auditLog(AuditLogFeature.Action)
+    case submitForReview
+  }
+
+  var body: some ReducerOf&lt;Self&gt; {
+    Scope(state: \.document, action: \.document) {
+      DocumentViewerFeature()
+    }
+    Scope(state: \.signature, action: \.signature) {
+      SignatureFeature()
+    }
+    Reduce { state, action in
+      switch action {
+      case .signature(.signed):
+        return .run { send in
+          await send(.auditLog(.record(.signatureAdded)))
+        }
+      // ...
+      }
+    }
+  }
+}</code></pre>
+
+  <p>Reading this six months later, the intent is still obvious. That doesn't happen with ad-hoc ViewModels.</p>
+
+  <h3>Testing side effects</h3>
+
+  <p>TCA's <code>TestStore</code> lets you exhaustively assert on every state change and every effect. For a legal app where the cost of a bug is measured in client liability, this matters enormously.</p>
+
+  <pre><code>@Test func documentSubmission() async throws {
+  let store = TestStore(
+    initialState: ReviewFeature.State(/* ... */)
+  ) {
+    ReviewFeature()
+  } withDependencies: {
+    $0.documentClient.submit = { _ in .success(.submitted) }
+  }
+
+  await store.send(.submitForReview) {
+    $0.isSubmitting = true
+  }
+  await store.receive(\.submissionResponse.success) {
+    $0.isSubmitting = false
+    $0.status = .submitted
+  }
+}</code></pre>
+
+  <p>The test reads like a specification. Fail to handle a case? The test tells you exactly which state mutation you missed.</p>
+
+  <h2>Where TCA creates friction</h2>
+
+  <h3>Boilerplate at the boundary</h3>
+
+  <p>Every action needs a case. Every state mutation needs to go through the reducer. For simple UI interactions — toggling a disclosure group, tracking focus — this feels like ceremony. TCA 1.x's <code>@ObservableState</code> helps significantly here, but the mindset shift takes time.</p>
+
+  <p>Our rule of thumb: any interaction that doesn't touch shared state or trigger a network call lives in <code>@State</code> inside the view. TCA for business logic, local state for pure UI.</p>
+
+  <h3>Navigation is genuinely hard</h3>
+
+  <p>Navigation in TCA was the roughest part of our first three months. The stack-based navigation introduced in TCA 1.x is expressive, but it requires you to model your entire navigation graph in state — which forces decisions about architecture that you might not be ready to make.</p>
+
+  <blockquote>
+    <p>The most important thing TCA taught me isn't about reducers. It's that navigation is state, and pretending otherwise will catch up with you.</p>
+  </blockquote>
+
+  <p>We ended up spending a week redesigning our navigation model when we realised our initial approach made deep-linking impossible. Build the navigation model before the views. Always.</p>
+
+  <h3>The learning curve for the team</h3>
+
+  <p>I was the only one on the team with prior TCA exposure. Getting two junior engineers up to speed took longer than I budgeted. The concepts are sound but the vocabulary is unfamiliar, and the framework's own documentation has grown dramatically — but not always in the direction of "here's how to think about this problem."</p>
+
+  <p>What helped most: pair programming on the first three features, an internal Notion doc mapping our domain concepts to TCA primitives, and a rule that any new pattern introduced to the codebase needed a worked example in a playground before merging.</p>
+
+  <h2>Patterns that made everything click</h2>
+
+  <h3>Dependencies as first-class citizens</h3>
+
+  <p>TCA's <code>@Dependency</code> system (from the <a href="https://github.com/pointfreeco/swift-dependencies" target="_blank" rel="noopener">swift-dependencies</a> library) solved our testability problems cleanly. Every external system — the document API, the signature service, the audit logger — is a protocol-shaped dependency injected at the store level.</p>
+
+  <pre><code>extension DependencyValues {
+  var documentClient: DocumentClient {
+    get { self[DocumentClient.self] }
+    set { self[DocumentClient.self] = newValue }
+  }
+}
+
+// In tests:
+store = TestStore(/* ... */) {
+  DocumentReviewFeature()
+} withDependencies: {
+  $0.documentClient = .mock
+  $0.clock = .immediate
+}</code></pre>
+
+  <p>No singleton injection, no environment objects threading through five view layers. The dependency graph is explicit and swappable.</p>
+
+  <h3>Using <code>Equatable</code> state aggressively</h3>
+
+  <p>Every <code>State</code> conforming to <code>Equatable</code> means SwiftUI only re-renders when state actually changes. For performance-sensitive views — our document list can have hundreds of entries — this is essential. Wrap any non-equatable types in an <code>EquatableNoop</code> wrapper or box them behind an <code>ID</code>.</p>
+
+  <h2>Would I choose TCA again?</h2>
+
+  <p>Yes — but with clearer eyes. TCA is the right tool for features with complex state, multiple side effects, and strict testability requirements. It's over-engineered for simple CRUD screens.</p>
+
+  <p>The pattern I'd recommend: start with TCA from day one for your core business-logic features, use simpler <code>@Observable</code> models for peripheral screens, and resist the urge to TCA-ify everything just for consistency. Consistent <em>outcomes</em> matter more than consistent architecture everywhere.</p>
+
+  <p>The real win isn't the architecture itself — it's the discipline it enforces. When every state change is explicit and every effect is declared, your codebase becomes a readable specification of what your app does. In a domain as consequential as legal workflows, that's not optional.</p>
+
+  <hr style="border:none;border-top:0.5px solid var(--border);margin:48px 0;">
+
+  <p style="color:var(--text3);font-size:14px;">Gianluca Orpello is Co-Founder & Tech Lead at <a href="https://unicorndonkeys.com" target="_blank" rel="noopener">Unicorn Donkeys</a>, building <a href="https://defenso.it" target="_blank" rel="noopener">Defenso.it</a>. Apple Certified Trainer at LearnQuest. Previously Apple Developer Academy mentor.</p>
+
+</article>
+
+<!-- POST NAV -->
+<nav class="post-nav">
+  <a href="./" class="post-nav-link cursor-hover"><span>←</span> All posts</a>
+  <a href="../#contact" class="post-nav-link cursor-hover">Get in touch <span>→</span></a>
+</nav>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../" class="footer-brand-logo cursor-hover">Gianluca Orpello</a>
+      <p class="footer-brand-tagline">iOS Engineer &amp; Co-Founder.<br>Building apps people love.</p>
+      <p class="footer-brand-loc">Naples, Italy · EU citizen</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Pages</p>
+      <ul class="footer-links">
+        <li><a href="../#about" class="cursor-hover">About</a></li>
+        <li><a href="../#experience" class="cursor-hover">Experience</a></li>
+        <li><a href="../#certifications" class="cursor-hover">Certifications</a></li>
+        <li><a href="../blog/" class="cursor-hover">Blog</a></li>
+        <li><a href="../#contact" class="cursor-hover">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Connect</p>
+      <ul class="footer-links">
+        <li><a href="mailto:g.orpello@gmail.com" class="cursor-hover"><span class="fl-icon">✉</span>g.orpello@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/gianlucaorpello/" target="_blank" rel="noopener" class="cursor-hover"><span class="fl-icon">in</span>LinkedIn</a></li>
+        <li><a href="https://github.com/gorpello" target="_blank" rel="noopener" class="cursor-hover"><span class="fl-icon">⌥</span>GitHub</a></li>
+        <li><a href="../Gianluca_Orpello_CV.pdf" download class="cursor-hover"><span class="fl-icon">↓</span>Download CV</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Gianluca Orpello</span>
+    <span>Crafted with care · Naples, Italy</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
