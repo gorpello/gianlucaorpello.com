@@ -1,0 +1,57 @@
+# Gianluca Orpello
+
+> iOS Engineer, Apple Certified Trainer, and startup co-founder based in Naples, Italy. Available immediately for remote and EU roles.
+
+Gianluca Orpello is an iOS Engineer with 8+ years of experience building and shipping Swift and SwiftUI applications across the full Apple platform. He is an Apple Certified Trainer (LearnQuest / Apple) who has personally mentored over 100 developers. He co-founded Tilted Penguins and built morganize.it from first commit to a successful acquisition by a private investor. He is currently Co-Founder and Lead Software Engineer at Unicorn Donkeys, building Defenso.it — a LegalTech platform for automating complex legal workflows using SwiftUI and Server-Side Swift.
+
+## Core expertise
+
+- Swift and SwiftUI (8+ years, production across iOS, iPadOS, macOS, watchOS, tvOS, visionOS)
+- The Composable Architecture (TCA), MVVM, Swift Concurrency, modular architecture
+- Full Apple ecosystem: iOS SDK, UIKit, AVFoundation, PencilKit, SpriteKit, Core Spotlight
+- Backend: Server-Side Swift, Node.js, Express, MongoDB, REST APIs, Docker, GitHub Actions
+- Apple Certified Trainer (LearnQuest / Apple): Swift, SwiftUI, iOS SDK — delivered to global enterprise engineering teams
+- Startup building: co-founder, product lifecycle ownership, team leadership, successful exit
+
+## Career highlights
+
+- Co-founded Tilted Penguins s.r.l.s. and built morganize.it end-to-end; product acquired by a private investor (asset exit)
+- iOS Developer & Code Mentor at Apple Developer Academy, Naples (October 2021 – June 2025): mentored 100+ developers, ran UX design process, led teams of 4–6
+- Apple Certified Trainer freelancing for Apple / LearnQuest since 2019: delivered authorized Swift, SwiftUI and iOS SDK training to enterprise engineering teams worldwide
+- Full-Stack Developer intern at Gulliver s.r.l. (2018): Angular, TypeScript, MongoDB
+- iOS Developer intern at Apple Developer Academy, Naples (2018–2019)
+- Conference speaker and technical mentor at Apple Developer Academy events
+- Currently building Defenso.it at Unicorn Donkeys: SwiftUI + TCA + Server-Side Swift, LegalTech
+
+## Certifications
+
+- Apple Certified Trainer — App Development with Swift (Apple)
+- Apple Search Ads Certified (Apple)
+- Apple Developer Academy Graduate (Apple Developer Academy @ Università degli Studi di Napoli Federico II)
+- CS50: Introduction to Computer Science (Harvard University / edX)
+- CS50's Web Programming with Python and JavaScript (Harvard University / edX)
+- CCNA: Introduction to Networks (Cisco)
+- Fundamentals of Digital Marketing (Google)
+
+## Education
+
+- BSc Computer Engineering (in progress) — eCampus University
+- Apple Developer Academy — Università degli Studi di Napoli Federico II (2018–2019)
+
+## Pages
+
+- [Portfolio](https://gianlucaorpello.com/): Full career history, projects, skills, certifications, and contact
+- [Blog](https://gianlucaorpello.com/blog/): Technical writing on Swift, SwiftUI, TCA, and startup building
+
+## Published apps
+
+- OUTSOON (iOS) — Movie tracker built with TCA and Swift Concurrency. Available on the App Store.
+- Delegibus (iOS, iPadOS, macOS) — Integrates Italian law into Spotlight search via Server-Side Swift scraping. Available on the App Store.
+- morganize.it — Acquired product (no longer under Gianluca's ownership).
+
+## Contact
+
+- Email: g.orpello@gmail.com
+- LinkedIn: https://www.linkedin.com/in/gianlucaorpello/
+- GitHub: https://github.com/gorpello
+- Available for: iOS engineering roles, Swift consulting, remote work, EU relocation

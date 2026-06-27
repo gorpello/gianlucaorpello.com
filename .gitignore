@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Claude Code
+.claude/
+.impeccable/
+CLAUDE.md
+PRODUCT.md
+
+# Design system (internal reference tool, not part of the public site)
+design-system/

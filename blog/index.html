@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+<meta property="og:image" content="https://gianlucaorpello.com/images/og-image.jpg">
+<meta name="twitter:image" content="https://gianlucaorpello.com/images/og-image.jpg">
+<title>Blog — Gianluca Orpello</title>
+<meta name="description" content="Writing on Swift, SwiftUI, TCA, startup building, and the Apple ecosystem. By Gianluca Orpello — iOS Engineer and Apple Certified Trainer.">
+<link rel="canonical" href="https://gianlucaorpello.com/blog/">
+<meta property="og:title" content="Blog — Gianluca Orpello">
+<meta property="og:description" content="Writing on Swift, SwiftUI, TCA, startup building, and the Apple ecosystem.">
+<meta property="og:url" content="https://gianlucaorpello.com/blog/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script>
+  (function(){
+    document.documentElement.classList.add('js-ready');
+    var t = localStorage.getItem('theme');
+    if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400;1,14..32,600&family=Inter+Tight:wght@700;800&display=swap">
+<link rel="stylesheet" href="../css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "@id": "https://gianlucaorpello.com/blog/#blog",
+      "url": "https://gianlucaorpello.com/blog/",
+      "name": "Gianluca Orpello — Blog",
+      "description": "Writing on Swift, SwiftUI, TCA, startup building, and the Apple ecosystem.",
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "@id": "https://gianlucaorpello.com/#person",
+        "name": "Gianluca Orpello"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://gianlucaorpello.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://gianlucaorpello.com/blog/" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+/* ── Loading dots ── */
+.blog-loading {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 80px 0;
+}
+.blog-loading-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--text3, #9a9a9a);
+  animation: blog-pulse 1.2s ease-in-out infinite;
+}
+.blog-loading-dot:nth-child(2) { animation-delay: .2s; }
+.blog-loading-dot:nth-child(3) { animation-delay: .4s; }
+@keyframes blog-pulse {
+  0%,80%,100% { opacity:.25; transform:scale(.85); }
+  40%         { opacity:1;   transform:scale(1); }
+}
+
+/* ── Empty state ── */
+.blog-empty {
+  grid-column: 1 / -1;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 100px 24px; gap: 16px;
+}
+.blog-empty-icon { font-size: 32px; color: var(--text3); margin: 0; line-height: 1; }
+.blog-empty-title { font: 700 28px/1.2 var(--font-display, 'Inter Tight', sans-serif); color: var(--text); margin: 0; }
+.blog-empty-sub { font: 400 16px/1.7 var(--font-family, 'Inter', sans-serif); color: var(--text2); margin: 0; max-width: 360px; }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<div class="custom-cursor"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="../" class="nav-logo cursor-hover">Gianluca Orpello</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="../#about" class="cursor-hover">About</a>
+      <a href="../#experience" class="cursor-hover">Experience</a>
+      <a href="../#certifications" class="cursor-hover">Certifications</a>
+      <a href="./" class="cursor-hover nav-active">Blog</a>
+      <a href="../#contact" class="cursor-hover">Contact</a>
+    </div>
+    <button class="theme-toggle cursor-hover" id="themeToggle" aria-label="Toggle theme"></button>
+    <button class="burger cursor-hover" id="burger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-overlay" id="mob">
+  <a href="../#about" class="mob-link cursor-hover">About<span>→</span></a>
+  <a href="../#experience" class="mob-link cursor-hover">Experience<span>→</span></a>
+  <a href="../#certifications" class="mob-link cursor-hover">Certifications<span>→</span></a>
+  <a href="./" class="mob-link cursor-hover">Blog<span>→</span></a>
+  <a href="../#contact" class="mob-link cursor-hover">Contact<span>→</span></a>
+</div>
+
+<!-- HERO -->
+<div class="blog-hero" id="main-content">
+  <h1 class="blog-hero-title fi">Writing on Swift,<br>iOS &amp; startups.</h1>
+  <p class="blog-hero-sub fi">By Gianluca Orpello — iOS Engineer &amp; Co-Founder.</p>
+</div>
+
+<hr class="div">
+
+<!-- POST LISTING -->
+<div class="blog-listing">
+  <div class="blog-listing-grid" id="blog-grid" aria-live="polite" aria-atomic="true">
+    <div class="blog-loading" aria-label="Loading posts">
+      <span class="blog-loading-dot"></span>
+      <span class="blog-loading-dot"></span>
+      <span class="blog-loading-dot"></span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="../" class="footer-brand-logo cursor-hover">Gianluca Orpello</a>
+      <p class="footer-brand-tagline">iOS Engineer &amp; Co-Founder.<br>8 years of Swift, one exit.</p>
+      <p class="footer-brand-loc">Naples, Italy · EU citizen</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Pages</p>
+      <ul class="footer-links">
+        <li><a href="../#about" class="cursor-hover">About</a></li>
+        <li><a href="../#experience" class="cursor-hover">Experience</a></li>
+        <li><a href="../#certifications" class="cursor-hover">Certifications</a></li>
+        <li><a href="../blog/" class="cursor-hover">Blog</a></li>
+        <li><a href="../#contact" class="cursor-hover">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Connect</p>
+      <ul class="footer-links">
+        <li><a href="mailto:g.orpello@gmail.com" class="cursor-hover"><span class="fl-icon">✉</span>g.orpello@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/gianlucaorpello/" target="_blank" rel="noopener" class="cursor-hover"><span class="fl-icon">in</span>LinkedIn</a></li>
+        <li><a href="https://github.com/gorpello" target="_blank" rel="noopener" class="cursor-hover"><span class="fl-icon">⌥</span>GitHub</a></li>
+        <li><a href="../Gianluca_Orpello_CV.pdf" download class="cursor-hover"><span class="fl-icon">↓</span>Download CV</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Gianluca Orpello</span>
+    <span>Crafted with care · Naples, Italy</span>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+(function () {
+  var INDEX_URL = 'https://raw.githubusercontent.com/gorpello/blog-posts/main/posts/index.json';
+  var grid = document.getElementById('blog-grid');
+
+  /* Category → accent color */
+  var CAT_COLOR = {
+    'swift':    '#0077ff',
+    'swiftui':  '#0077ff',
+    'ios':      '#0077ff',
+    'startup':  '#30d158',
+    'legaltech':'#bf5af2',
+    'teaching': '#ff9f0a',
+    'tca':      '#0077ff',
+    'apple':    '#6e6e73'
+  };
+
+  /* Category → gradient for cover when no image */
+  var CAT_GRADIENT = {
+    'swift':    'linear-gradient(135deg,#0077ff 0%,#0050b8 100%)',
+    'swiftui':  'linear-gradient(135deg,#0077ff 0%,#0050b8 100%)',
+    'ios':      'linear-gradient(135deg,#0077ff 0%,#0050b8 100%)',
+    'startup':  'linear-gradient(135deg,#30d158 0%,#1a8a35 100%)',
+    'legaltech':'linear-gradient(135deg,#bf5af2 0%,#8e3fbe 100%)',
+    'teaching': 'linear-gradient(135deg,#ff9f0a 0%,#c97800 100%)',
+    'tca':      'linear-gradient(135deg,#0077ff 0%,#0050b8 100%)',
+    'apple':    'linear-gradient(135deg,#636366 0%,#3a3a3c 100%)'
+  };
+  var DEFAULT_GRADIENT = 'linear-gradient(135deg,#3a3a3c 0%,#1c1c1e 100%)';
+
+  function catKey(category) {
+    return (category || '').toLowerCase().split(/[\s·\-·]+/)[0];
+  }
+
+  function tagColor(category) {
+    return CAT_COLOR[catKey(category)] || '#6e6e73';
+  }
+
+  function coverGradient(category) {
+    return CAT_GRADIENT[catKey(category)] || DEFAULT_GRADIENT;
+  }
+
+  function fmtDate(iso) {
+    var d = new Date(iso + 'T00:00:00');
+    return d.toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+  }
+
+  function esc(str) {
+    return String(str || '')
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function coverHTML(post) {
+    if (post.image) {
+      return '<img class="post-card-cover" src="' + esc(post.image) + '" alt="' + esc(post.title) + '" loading="lazy">';
+    }
+    var grad = coverGradient(post.category);
+    return '<div class="post-card-cover post-card-cover-gradient" style="background:' + grad + ';"></div>';
+  }
+
+  function cardHTML(post) {
+    var color = tagColor(post.category);
+    return '<a class="post-card cursor-hover" href="' + esc(post.url) + '">' +
+      coverHTML(post) +
+      '<div class="post-card-body">' +
+        '<div class="post-card-meta">' +
+          '<time class="post-card-date">' + esc(fmtDate(post.date)) + '</time>' +
+          '<span class="post-card-tag" style="background:' + color + ';">' + esc(post.category) + '</span>' +
+        '</div>' +
+        '<div class="post-card-text">' +
+          '<h2 class="post-card-title">' + esc(post.title) + '</h2>' +
+          '<p class="post-card-excerpt">' + esc(post.excerpt) + '</p>' +
+        '</div>' +
+      '</div>' +
+    '</a>';
+  }
+
+  function emptyHTML() {
+    return '<div class="blog-empty">' +
+      '<p class="blog-empty-icon">✦</p>' +
+      '<p class="blog-empty-title">Something is coming…</p>' +
+      '<p class="blog-empty-sub">Writing on Swift, TCA, startups &amp; craft.<br>Stay tuned.</p>' +
+    '</div>';
+  }
+
+  var ctrl = new AbortController();
+  var tid = setTimeout(function(){ ctrl.abort(); }, 8000);
+  fetch(INDEX_URL, { signal: ctrl.signal })
+    .then(function(r) { clearTimeout(tid); if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(posts) {
+      grid.innerHTML = (Array.isArray(posts) && posts.length)
+        ? posts.map(cardHTML).join('')
+        : emptyHTML();
+    })
+    .catch(function() { grid.innerHTML = emptyHTML(); });
+})();
+</script>
+
+</body>
+</html>
