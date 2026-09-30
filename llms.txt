@@ -1,57 +1,65 @@
 # Gianluca Orpello
 
-> iOS Engineer, Apple Certified Trainer, and startup co-founder based in Naples, Italy. Available immediately for remote and EU roles.
+> iOS Engineer and Developer Educator based in Naples, Italy. EU citizen, open to remote roles and relocation.
 
-Gianluca Orpello is an iOS Engineer with 8+ years of experience building and shipping Swift and SwiftUI applications across the full Apple platform. He is an Apple Certified Trainer (LearnQuest / Apple) who has personally mentored over 100 developers. He co-founded Tilted Penguins and built morganize.it from first commit to a successful acquisition by a private investor. He is currently Co-Founder and Lead Software Engineer at Unicorn Donkeys, building Defenso.it — a LegalTech platform for automating complex legal workflows using SwiftUI and Server-Side Swift.
+Gianluca Orpello is an iOS Engineer with 8 years of Swift and SwiftUI. He spent six years (2019–2025) as an Apple Certified Trainer delivering Apple-authorised training to engineering teams at dozens of enterprise clients, and four years (2021–2025) as faculty at the Apple Developer Academy in Naples, where he coached a cohort of 400+ developers through daily code review, spoke at Academy conferences and led the organisation of the Academy Future Fair in 2024 and 2025. He co-founded Tilted Penguins (morganize.it, assets acquired by a private investor) and Unicorn Donkeys, where he is Co-Founder and Tech Lead building Defenso.it and Quobe.
 
 ## Core expertise
 
-- Swift and SwiftUI (8+ years, production across iOS, iPadOS, macOS, watchOS, tvOS, visionOS)
-- The Composable Architecture (TCA), MVVM, Swift Concurrency, modular architecture
-- Full Apple ecosystem: iOS SDK, UIKit, AVFoundation, PencilKit, SpriteKit, Core Spotlight
-- Backend: Server-Side Swift, Node.js, Express, MongoDB, REST APIs, Docker, GitHub Actions
-- Apple Certified Trainer (LearnQuest / Apple): Swift, SwiftUI, iOS SDK — delivered to global enterprise engineering teams
-- Startup building: co-founder, product lifecycle ownership, team leadership, successful exit
+- Swift and SwiftUI, UIKit, Swift Concurrency (8 years)
+- The Composable Architecture (TCA), MVVM, modular architecture
+- Apple frameworks: CloudKit, SwiftData / Core Data, AVFoundation, PencilKit, VisionKit, Core Spotlight, visionOS
+- Backend: Server-Side Swift, REST APIs, GitHub Actions, CI/CD
+- Developer education: Apple-authorised training, technical writing, conference talks, workshops, event organisation
 
-## Career highlights
+## Experience
 
-- Co-founded Tilted Penguins s.r.l.s. and built morganize.it end-to-end; product acquired by a private investor (asset exit)
-- iOS Developer & Code Mentor at Apple Developer Academy, Naples (October 2021 – June 2025): mentored 100+ developers, ran UX design process, led teams of 4–6
-- Apple Certified Trainer freelancing for Apple / LearnQuest since 2019: delivered authorized Swift, SwiftUI and iOS SDK training to enterprise engineering teams worldwide
-- Full-Stack Developer intern at Gulliver s.r.l. (2018): Angular, TypeScript, MongoDB
-- iOS Developer intern at Apple Developer Academy, Naples (2018–2019)
-- Conference speaker and technical mentor at Apple Developer Academy events
-- Currently building Defenso.it at Unicorn Donkeys: SwiftUI + TCA + Server-Side Swift, LegalTech
+- Co-Founder & Tech Lead, Unicorn Donkeys (June 2025 – present): Defenso.it (legal-workflow automation) and Quobe (social reading app, launching October 2026)
+- iOS Engineer & Faculty Member, Apple Developer Academy, Naples (October 2021 – June 2025)
+- Apple Certified Trainer, Apple / LearnQuest, freelance (September 2019 – 2025)
+- Technical Writer & Speaker, Create with Swift, freelance (October 2021 – June 2025)
+- Co-Founder & Lead Software Engineer, Tilted Penguins s.r.l.s. (2018 – 2019): built morganize.it, assets acquired by a private investor
+- iOS Developer Intern, Apple Developer Academy, Naples (September 2018 – August 2019)
+- Full-Stack Developer Intern, Gulliver s.r.l., Brescia (February – July 2018)
+
+## Education
+
+- BSc Computer Engineering and Automation, eCampus University (2026)
+- World Class Developer, Apple Developer Academy, University of Naples Federico II (2017 – 2018)
 
 ## Certifications
 
 - Apple Certified Trainer — App Development with Swift (Apple)
+- Apple Intelligence On-Demand (Kodeco)
 - Apple Search Ads Certified (Apple)
-- Apple Developer Academy Graduate (Apple Developer Academy @ Università degli Studi di Napoli Federico II)
-- CS50: Introduction to Computer Science (Harvard University / edX)
-- CS50's Web Programming with Python and JavaScript (Harvard University / edX)
-- CCNA: Introduction to Networks (Cisco)
 - Fundamentals of Digital Marketing (Google)
 
-## Education
+## Apps
 
-- BSc Computer Engineering (in progress) — eCampus University
-- Apple Developer Academy — Università degli Studi di Napoli Federico II (2018–2019)
+- Quobe (iOS) — social reading clubs with shared passages. Launching October 2026.
+- Privacy Form (iOS, iPadOS) — event-consent platform used at events with 3,000–4,000 attendees.
+- Outsoon (iOS) — movie tracker built with TCA and Swift Concurrency.
+- MindLand (iOS) — sleep analysis rendered as an interactive 3D island.
+- Delegibus (macOS, iPadOS, iOS) — Italian law in Spotlight search, Server-Side Swift backend.
+- QRSwift (macOS) — privacy-first menu-bar QR generator.
+
+## Publications (Create with Swift)
+
+- [Using Server-Side Swift for Machine Learning Processing](https://www.createwithswift.com/using-server-side-swift-machine-learning-processing/)
+- [Camera Capture Setup in a SwiftUI App](https://www.createwithswift.com/camera-capture-setup-in-a-swiftui-app/)
+- [Requesting User Authorization for Privacy-Protected Frameworks](https://www.createwithswift.com/requesting-user-authorization-privacy-protected-frameworks/)
+- [Creating a Custom App Launch Experience in SwiftUI With Deep Linking](https://www.createwithswift.com/creating-a-custom-app-launch-experience-in-swiftui-with-deep-linking/)
+- [Using GitHub Actions To Deploy Static Sites Generated With Swift and Publish](https://www.createwithswift.com/using-github-actions-to-deploy-static-sites-generated-with-swift-and-publish/)
 
 ## Pages
 
-- [Portfolio](https://gianlucaorpello.com/): Full career history, projects, skills, certifications, and contact
-- [Blog](https://gianlucaorpello.com/blog/): Technical writing on Swift, SwiftUI, TCA, and startup building
-
-## Published apps
-
-- OUTSOON (iOS) — Movie tracker built with TCA and Swift Concurrency. Available on the App Store.
-- Delegibus (iOS, iPadOS, macOS) — Integrates Italian law into Spotlight search via Server-Side Swift scraping. Available on the App Store.
-- morganize.it — Acquired product (no longer under Gianluca's ownership).
+- [Portfolio](https://gianlucaorpello.com/)
+- [CV (PDF)](https://gianlucaorpello.com/Gianluca_Orpello_CV.pdf)
 
 ## Contact
 
 - Email: g.orpello@gmail.com
 - LinkedIn: https://www.linkedin.com/in/gianlucaorpello/
 - GitHub: https://github.com/gorpello
-- Available for: iOS engineering roles, Swift consulting, remote work, EU relocation
+- X: https://x.com/GOrpello
+- Open to: iOS engineering roles, developer relations and developer education roles, remote work, EU relocation
